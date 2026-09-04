@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartoon Hunt Arena</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game-wrap">
+
+  <canvas id="game-canvas" width="1280" height="720"></canvas>
+
+  <!-- ============ MAIN MENU ============ -->
+  <div id="menu-screen" class="overlay">
+    <div class="panel">
+      <h1>🎯 Cartoon Hunt Arena</h1>
+      <p class="subtitle">Blast the silly critters. No animals were harmed (they just go &quot;POOF&quot;).</p>
+
+      <div class="option-group">
+        <div class="option-label">Difficulty</div>
+        <div class="button-row" id="difficulty-buttons">
+          <button class="opt-btn selected" data-diff="easy">EASY</button>
+          <button class="opt-btn" data-diff="normal">NORMAL</button>
+          <button class="opt-btn" data-diff="hard">HARD</button>
+        </div>
+      </div>
+
+      <div class="option-group">
+        <div class="option-label">Ammo</div>
+        <div class="button-row" id="ammo-buttons">
+          <button class="opt-btn selected" data-ammo="unlimited">UNLIMITED</button>
+          <button class="opt-btn" data-ammo="limited">LIMITED</button>
+        </div>
+      </div>
+
+      <div class="option-group">
+        <div class="option-label">Sound</div>
+        <div class="button-row" id="sound-buttons">
+          <button class="opt-btn selected" data-sound="on">ON</button>
+          <button class="opt-btn" data-sound="off">OFF</button>
+        </div>
+      </div>
+
+      <button id="start-btn" class="primary-btn">START GAME</button>
+
+      <div class="controls-guide">
+        <div><b>WASD</b> / <b>Arrow Keys</b> — Move</div>
+        <div><b>Mouse</b> — Aim &nbsp; <b>Left Click</b> — Shoot</div>
+        <div><b>R</b> — Reload &nbsp; <b>ESC</b> — Pause</div>
+      </div>
+
+      <div id="menu-highscore" class="highscore-line"></div>
+    </div>
+  </div>
+
+  <!-- ============ PAUSE ============ -->
+  <div id="pause-screen" class="overlay hidden">
+    <div class="panel">
+      <h2>PAUSED</h2>
+      <button id="resume-btn" class="primary-btn">RESUME</button>
+      <button id="restart-from-pause-btn" class="secondary-btn">RESTART</button>
+      <button id="menu-from-pause-btn" class="secondary-btn">MAIN MENU</button>
+    </div>
+  </div>
+
+  <!-- ============ BOSS INTRO ============ -->
+  <div id="boss-intro-screen" class="overlay hidden">
+    <div class="panel boss-panel">
+      <h2 class="warning-text">⚠ WARNING ⚠</h2>
+      <h1 class="boss-appear-text">A BOSS HAS APPEARED!</h1>
+    </div>
+  </div>
+
+  <!-- ============ STAGE COMPLETE ============ -->
+  <div id="stage-complete-screen" class="overlay hidden">
+    <div class="panel">
+      <h2>STAGE COMPLETE!</h2>
+      <div class="stats-list" id="stage-complete-stats"></div>
+      <button id="next-stage-btn" class="primary-btn">NEXT STAGE</button>
+    </div>
+  </div>
+
+  <!-- ============ GAME OVER ============ -->
+  <div id="game-over-screen" class="overlay hidden">
+    <div class="panel">
+      <h2 id="game-over-title">GAME OVER</h2>
+      <div id="new-highscore-banner" class="new-highscore hidden">NEW HIGH SCORE!</div>
+      <div class="stats-list" id="game-over-stats"></div>
+      <button id="play-again-btn" class="primary-btn">PLAY AGAIN</button>
+      <button id="game-over-menu-btn" class="secondary-btn">MAIN MENU</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
